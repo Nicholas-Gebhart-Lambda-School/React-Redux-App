@@ -4,6 +4,7 @@ import { START_FETCHING, FETCH_SUCCESS, FETCH_ERROR } from '../actions';
 export default (state = beerState, action) => {
   switch (action.type) {
     case START_FETCHING:
+      console.log('fetching');
       return {
         ...state,
         isLoading: true,

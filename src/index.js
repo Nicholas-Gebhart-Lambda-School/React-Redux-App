@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
+import beerFetch from './reducers/beerFetch';
 import thunk from 'redux-thunk';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(beerFetch, applyMiddleware(thunk));
 
 render(
   <Provider store={store}>

@@ -1,3 +1,10 @@
 import React from 'react';
+import BreweryCard from './containers/BreweryCard';
 
-export default () => <h1>Hello</h1>;
+export default () => {
+  return (
+    <>
+      <BreweryCard />
+    </>
+  );
+};
