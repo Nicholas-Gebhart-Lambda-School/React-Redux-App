@@ -1,10 +1,11 @@
 import React from 'react';
+import brewery from './brewery.module.scss';
 
 export default ({ brew }) => {
   const { name, street, city, state, country, phone, website_url } = brew;
 
   return (
-    <div>
+    <div className={brewery.container}>
       <h2>
         <a href={website_url} target="_blank" rel="noopener noreferrer">
           {name}

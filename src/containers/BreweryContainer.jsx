@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { fetchBeer } from '../actions';
 import { connect } from 'react-redux';
 
-import Brewery from '../components/Brewery';
+import Brewery from '../components/brewery/Brewery';
+
+import breweryContainer from './breweryContainer.module.scss';
 
 const mapStateToProps = state => {
   return {
@@ -22,11 +24,10 @@ export default connect(
   }, [fetchBeer]);
 
   return (
-    <div>
-      <h1>Brewery</h1>
+    <div className={breweryContainer.card}>
       {error && <p>{error}</p>}
       {isLoading ? (
-        <h1>Loading</h1>
+        <h1 className={breweryContainer.loading}>Loading</h1>
       ) : (
         beer &&
         beer.map(brew => {

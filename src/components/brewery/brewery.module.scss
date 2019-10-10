@@ -1,0 +1,27 @@
+.container {
+  width: 50%;
+  margin-bottom: 45px;
+
+  h2 {
+    font-family: sans-serif;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+
+    a {
+      text-decoration: none;
+      color: #333;
+
+      &:hover {
+        border-bottom: 1px solid #333;
+        background: beige;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  p {
+    font-family: sans-serif;
+    color: #333;
+  }
+}
