@@ -15,7 +15,8 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchBeer }
-)(({ fetchBeer, error, beer }) => {
+)(({ fetchBeer, error, beer, isLoading }) => {
+  console.log(isLoading);
   useEffect(() => {
     fetchBeer();
   }, [fetchBeer]);
@@ -24,10 +25,14 @@ export default connect(
     <div>
       <h1>Brewery</h1>
       {error && <p>{error}</p>}
-      {beer &&
+      {isLoading ? (
+        <h1>Loading</h1>
+      ) : (
+        beer &&
         beer.map(brew => {
-          return <Brewery brew={brew} />;
-        })}
+          return <Brewery key={brew.id} brew={brew} />;
+        })
+      )}
     </div>
   );
 });
